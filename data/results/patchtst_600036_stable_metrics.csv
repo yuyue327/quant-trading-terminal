@@ -1,0 +1,2 @@
+sharpe_ratio_median,sharpe_ratio_std,sharpe_ratio_min,sharpe_ratio_max,annual_return_median,annual_return_std,annual_return_min,annual_return_max,max_drawdown_median,max_drawdown_std,max_drawdown_min,max_drawdown_max,win_rate_median,win_rate_std,win_rate_min,win_rate_max,total_trades_median,total_trades_std,total_trades_min,total_trades_max
+1.8650000000000002,2.0148048912984104,-2.68,5.83,0.6807,1.5264289753866704,-0.6812999999999999,5.3737,-0.06775,0.02823145408936635,-0.1485,-0.0432,0.4318,0.053599791044368815,0.3182,0.5455,40.0,1.0136567466356647,37.0,41.0

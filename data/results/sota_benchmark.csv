@@ -1,0 +1,8 @@
+model,f1
+RandomForest (tech only),0.4527
+Transformer Gate,0.4514
+LSTM (seq+tech+LLM),0.4451038575667655
+Transformer (standard),0.4481481481481482
+Ensemble (Hard Vote),0.453551912568306
+Ensemble (Soft Vote),0.4672727272727273
+Ensemble (Weighted),0.467697907188353

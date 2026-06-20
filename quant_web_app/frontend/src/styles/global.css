@@ -1,0 +1,627 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0A0E17;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #E0E0E0;
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+.metric-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6B7280;
+  font-weight: 600;
+}
+.metric-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 4px 0;
+  color: #FFFFFF;
+}
+.metric-sub { font-size: 12px; color: #9CA3AF; }
+.cyan { color: #00E5FF; }
+.green { color: #00F5A0; }
+.red { color: #FF0050; }
+.gold { color: #F59E0B; }
+.purple { color: #8B5CF6; }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0A0E17; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00E5FF; }
+
+select, input {
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid #1F2937;
+  border-radius: 6px;
+  color: #E0E0E0;
+  padding: 6px 12px;
+  font-size: 13px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B7280'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 6px;
+  padding-right: 30px !important;
+}
+select:focus, input:focus {
+  outline: 1px solid #00E5FF;
+  border-color: #00E5FF;
+}
+
+button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+button:hover { opacity: 0.85; transform: scale(1.02); }
+button:active { transform: scale(0.98); }
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.badge-buy { background: rgba(0, 245, 160, 0.2); color: #00F5A0; }
+.badge-sell { background: rgba(255, 0, 80, 0.2); color: #FF0050; }
+.badge-hold { background: rgba(245, 158, 11, 0.2); color: #F59E0B; }
+
+.flex { display: flex; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.w-full { width: 100%; }
+.text-center { text-align: center; }
+.text-muted { color: #6B7280; }
+.text-sm { font-size: 12px; }
+.text-xs { font-size: 10px; }
+
+@keyframes priceJump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.price-jump { animation: priceJump 0.25s ease; }
+
+@keyframes flashFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.flash-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  animation: flashFade 0.6s ease-out;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+.ticker-container {
+  background: #111827;
+  border-bottom: 1px solid #1F2937;
+  padding: 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.ticker-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+.ticker-item {
+  margin: 0 30px;
+  font-size: 13px;
+  color: #D1D5DB;
+}
+.ticker-item .name { font-weight: 600; }
+.ticker-item .price { margin: 0 8px; font-weight: 700; color: #FFFFFF; }
+.ticker-item .change-up { color: #00F5A0; }
+.ticker-item .change-down { color: #FF0050; }
+.ticker-item .change-flat { color: #F59E0B; }
+
+/* ===== 入场动画 ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.05); }
+  50% { box-shadow: 0 0 40px rgba(0, 229, 255, 0.15); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.animate-fadeInScale {
+  animation: fadeInScale 0.6s ease-out both;
+}
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out both;
+}
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out both;
+}
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* ===== 玻璃卡片升级 ===== */
+.glass-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: fadeInUp 0.6s ease-out both;
+}
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 229, 255, 0.08), 0 0 60px rgba(0, 229, 255, 0.02);
+}
+
+/* ===== 标题渐变 ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #00E5FF 0%, #00F5A0 50%, #8B5CF6 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ===== 数字跳动 ===== */
+.number-jump {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.number-jump.up { color: #00F5A0; }
+.number-jump.down { color: #FF0050; }
+
+/* ===== 全局卡片入场延迟 ===== */
+.metric-card-1 { animation-delay: 0.05s; }
+.metric-card-2 { animation-delay: 0.10s; }
+.metric-card-3 { animation-delay: 0.15s; }
+.metric-card-4 { animation-delay: 0.20s; }
+.metric-card-5 { animation-delay: 0.25s; }
+.metric-card-6 { animation-delay: 0.30s; }
+.metric-card-7 { animation-delay: 0.35s; }
+.metric-card-8 { animation-delay: 0.40s; }
+
+/* ===== 品牌级玻璃态分割线 ===== */
+.glass-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.15), rgba(0,245,160,0.15), transparent);
+  margin: 24px 0;
+  border: none;
+}
+
+/* ===== 数据墙数字动画 ===== */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-up {
+  animation: countUp 0.8s ease-out both;
+}
+
+/* ===== 微光晕 ===== */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 0;
+}
+.glow-orb.cyan { background: rgba(0,229,255,0.15); width: 400px; height: 400px; }
+.glow-orb.green { background: rgba(0,245,160,0.08); width: 300px; height: 300px; }
+.glow-orb.purple { background: rgba(139,92,246,0.08); width: 350px; height: 350px; }
+
+/* ===== 亮色主题玻璃卡片 ===== */
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04) !important;
+}
+.glass-card-light:hover {
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  box-shadow: 0 8px 40px rgba(0, 229, 255, 0.08) !important;
+}
+.glass-card-light .metric-label {
+  color: #6B7280 !important;
+}
+.glass-card-light .metric-value {
+  color: #111827 !important;
+}
+.glass-card-light .metric-sub {
+  color: #6B7280 !important;
+}
+
+/* ===== 移动端响应式适配 ===== */
+
+/* 小屏幕设备（手机） */
+@media (max-width: 768px) {
+  /* 全局字体缩小 */
+  body {
+    font-size: 14px;
+  }
+
+  /* 顶部标题栏 */
+  .gradient-text {
+    font-size: 18px !important;
+  }
+
+  /* 指标卡片网格：从自适应改为两列 */
+  .glass-card {
+    padding: 10px 12px !important;
+  }
+  .metric-value {
+    font-size: 18px !important;
+  }
+  .metric-label {
+    font-size: 10px !important;
+  }
+
+  /* 主布局：所有 flex 容器改为纵向堆叠 */
+  .main-layout {
+    flex-direction: column !important;
+  }
+
+  /* 交易面板和订单簿在手机上全宽 */
+  .trade-panel-wrapper {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* K 线图高度减小 */
+  .candlestick-chart {
+    height: 400px !important;
+    min-height: 300px !important;
+  }
+
+  /* 绩效仪表盘图表高度 */
+  .performance-chart {
+    height: 200px !important;
+    min-height: 150px !important;
+  }
+
+  /* 数据网格表格：允许横向滚动 */
+  .pro-data-grid-wrapper {
+    overflow-x: auto !important;
+  }
+  .pro-data-grid-wrapper table {
+    min-width: 600px;
+  }
+
+  /* 跑马灯字体缩小 */
+  .ticker-item {
+    font-size: 11px !important;
+    margin: 0 15px !important;
+  }
+
+  /* 系统状态栏换行 */
+  .system-status {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* 快捷操作按钮缩小 */
+  .quick-action-btn {
+    font-size: 10px !important;
+    padding: 2px 8px !important;
+  }
+
+  /* 顶部导航区域 */
+  .app-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .app-controls {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  /* 行业归因和散点图堆叠 */
+  .charts-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 订单簿深度图高度 */
+  .orderbook-depth {
+    height: 180px !important;
+  }
+
+  /* 隐藏角落标签（太小看不清） */
+  .corner-tag {
+    display: none !important;
+  }
+}
+
+/* 平板设备 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .charts-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .trade-panel-wrapper {
+    width: 50% !important;
+  }
+}
+/* ============================================
+   移动端响应式适配（完整版）
+   ============================================ */
+
+/* 手机竖屏（< 768px） */
+@media screen and (max-width: 768px) {
+  /* 1. 全局字体缩小 */
+  body {
+    font-size: 13px;
+  }
+
+  /* 2. 主容器内边距减小 */
+  .app-container {
+    padding: 8px 10px !important;
+  }
+
+  /* 3. 标题栏 */
+  .app-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .app-header h1 {
+    font-size: 18px !important;
+  }
+  .app-controls {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .app-controls select {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    min-width: 100px !important;
+  }
+
+  /* 4. 指标卡片：改为 2 列 */
+  .glass-card {
+    padding: 8px 10px !important;
+  }
+  .metric-value {
+    font-size: 16px !important;
+  }
+  .metric-label {
+    font-size: 9px !important;
+  }
+
+  /* 5. 数据亮点墙（HeroStats）：4 项变为 2x2 布局 */
+  .hero-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4px !important;
+  }
+  .hero-stats-grid > div {
+    padding: 12px 8px !important;
+  }
+  .hero-stats-grid .stat-value {
+    font-size: 22px !important;
+  }
+  .hero-stats-grid .stat-label {
+    font-size: 10px !important;
+  }
+
+  /* 6. 双图布局：堆叠 */
+  .charts-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .charts-row > div {
+    min-height: 200px !important;
+  }
+
+  /* 7. K 线图 */
+  .candlestick-chart {
+    height: 350px !important;
+    min-height: 280px !important;
+  }
+
+  /* 8. 主布局（绩效排名 + 情绪面板） */
+  .main-layout {
+    flex-direction: column !important;
+  }
+  .main-layout > div {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* 9. 交易面板 */
+  .trade-panel-wrapper {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* 10. 订单簿深度 */
+  .orderbook-depth {
+    height: 150px !important;
+    min-height: 120px !important;
+  }
+
+  /* 11. 绩效仪表盘图表 */
+  .performance-chart {
+    height: 180px !important;
+    min-height: 140px !important;
+  }
+  .performance-dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 12. 跑马灯 */
+  .ticker-item {
+    font-size: 10px !important;
+    margin: 0 12px !important;
+  }
+
+  /* 13. 系统状态栏 */
+  .system-status {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    font-size: 9px !important;
+    padding: 4px 10px !important;
+  }
+
+  /* 14. 快捷操作按钮 */
+  .quick-action-btn {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* 15. 数据网格：允许横向滚动 */
+  .pro-data-grid-wrapper {
+    overflow-x: auto !important;
+  }
+  .pro-data-grid-wrapper table {
+    min-width: 480px !important;
+    font-size: 11px !important;
+  }
+  .pro-data-grid-wrapper th,
+  .pro-data-grid-wrapper td {
+    padding: 4px 6px !important;
+  }
+
+  /* 16. 情绪仪表盘 */
+  .market-sentiment-chart {
+    height: 120px !important;
+  }
+
+  /* 17. 最近交易面板 */
+  .recent-trades {
+    max-height: 180px !important;
+  }
+
+  /* 18. 通知系统：调整位置和大小 */
+  .notification-container {
+    top: 60px !important;
+    right: 8px !important;
+    max-width: 280px !important;
+  }
+  .notification-container > div {
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+  }
+
+  /* 19. 快捷键面板 */
+  .shortcuts-panel {
+    top: 60px !important;
+    right: 8px !important;
+    min-width: 180px !important;
+    padding: 12px !important;
+  }
+
+  /* 20. 角落标签：隐藏 */
+  .corner-tag {
+    display: none !important;
+  }
+
+  /* 21. 分隔线 */
+  .section-divider {
+    margin: 12px 0 !important;
+  }
+}
+
+/* 平板竖屏（768px - 1024px） */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .charts-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .trade-panel-wrapper {
+    width: 50% !important;
+  }
+  .main-layout > div:last-child {
+    width: 50% !important;
+  }
+}
+
+/* 平板横屏 / 小笔记本（1025px - 1280px） */
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .trade-panel-wrapper {
+    width: 280px !important;
+  }
+}

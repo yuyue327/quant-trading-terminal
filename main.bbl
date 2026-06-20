@@ -1,0 +1,143 @@
+\begin{thebibliography}{26}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Bailey and Lopez~de Prado(2014)}]{bailey2014pseudo}
+\bibinfo{author}{Bailey, D.H.}, \bibinfo{author}{Lopez~de Prado, M.}, \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{The deflated sharpe ratio: Correcting for selection bias, backtest overfitting, and non-normality}.
+\newblock \bibinfo{journal}{Journal of Portfolio Management} \bibinfo{volume}{40}, \bibinfo{pages}{94--107}.
+\newblock \DOIprefix\doi{10.3905/jpm.2014.40.5.094}.
+%Type = Article
+\bibitem[{Caruana(1997)}]{caruana1997multitask}
+\bibinfo{author}{Caruana, R.}, \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{Multitask learning}.
+\newblock \bibinfo{journal}{Machine Learning} \bibinfo{volume}{28}, \bibinfo{pages}{41--75}.
+\newblock \DOIprefix\doi{10.1023/A:1007379606734}.
+%Type = Inproceedings
+\bibitem[{Chen et~al.(2015)Chen, Zhou and Dai}]{chen2015lstm}
+\bibinfo{author}{Chen, K.}, \bibinfo{author}{Zhou, Y.}, \bibinfo{author}{Dai, F.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{A lstm-based method for stock returns prediction: A case study of china stock market}, in: \bibinfo{booktitle}{In: Proceedings of the 2015 IEEE International Conference on Big Data (Big Data)}, \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{2823--2824}.
+\newblock \DOIprefix\doi{10.1109/BigData.2015.7364089}.
+%Type = Inproceedings
+\bibitem[{Chen et~al.(2020)Chen, Kornblith, Norouzi and Hinton}]{chen2020simple}
+\bibinfo{author}{Chen, T.}, \bibinfo{author}{Kornblith, S.}, \bibinfo{author}{Norouzi, M.}, \bibinfo{author}{Hinton, G.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{A simple framework for contrastive learning of visual representations}, in: \bibinfo{booktitle}{In: Proceedings of the 37th International Conference on Machine Learning (ICML)}, pp. \bibinfo{pages}{1597--1607}.
+%Type = Article
+\bibitem[{Diebold and Mariano(1995)}]{diebold1995comparing}
+\bibinfo{author}{Diebold, F.X.}, \bibinfo{author}{Mariano, R.S.}, \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{Comparing predictive accuracy}.
+\newblock \bibinfo{journal}{Journal of Business \& Economic Statistics} \bibinfo{volume}{13}, \bibinfo{pages}{253--263}.
+\newblock \DOIprefix\doi{10.1080/07350015.1995.10524599}.
+%Type = Inproceedings
+\bibitem[{Finn et~al.(2017)Finn, Abbeel and Levine}]{finn2017model}
+\bibinfo{author}{Finn, C.}, \bibinfo{author}{Abbeel, P.}, \bibinfo{author}{Levine, S.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Model-agnostic meta-learning for fast adaptation of deep networks}, in: \bibinfo{booktitle}{In: Proceedings of the 34th International Conference on Machine Learning (ICML)}, pp. \bibinfo{pages}{1126--1135}.
+%Type = Inproceedings
+\bibitem[{Gal and Ghahramani(2016)}]{gal2016dropout}
+\bibinfo{author}{Gal, Y.}, \bibinfo{author}{Ghahramani, Z.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Dropout as a bayesian approximation: Representing model uncertainty in deep learning}, in: \bibinfo{booktitle}{In: Proceedings of the 33rd International Conference on Machine Learning (ICML)}, pp. \bibinfo{pages}{1050--1059}.
+%Type = Article
+\bibitem[{Henrique et~al.(2019)Henrique, Sobreiro and Kimura}]{henrique2019literature}
+\bibinfo{author}{Henrique, B.M.}, \bibinfo{author}{Sobreiro, V.A.}, \bibinfo{author}{Kimura, H.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Literature review: Machine learning techniques applied to financial market prediction}.
+\newblock \bibinfo{journal}{Expert Systems with Applications} \bibinfo{volume}{124}, \bibinfo{pages}{226--251}.
+\newblock \DOIprefix\doi{10.1016/j.eswa.2019.01.012}.
+%Type = Article
+\bibitem[{Hochreiter and Schmidhuber(1997)}]{hochreiter1997long}
+\bibinfo{author}{Hochreiter, S.}, \bibinfo{author}{Schmidhuber, J.}, \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{Long short-term memory}.
+\newblock \bibinfo{journal}{Neural Computation} \bibinfo{volume}{9}, \bibinfo{pages}{1735--1780}.
+\newblock \DOIprefix\doi{10.1162/neco.1997.9.8.1735}.
+%Type = Article
+\bibitem[{Hsu et~al.(2016)Hsu, Han, Wu and Cao}]{hsu2016data}
+\bibinfo{author}{Hsu, P.H.}, \bibinfo{author}{Han, Q.}, \bibinfo{author}{Wu, W.}, \bibinfo{author}{Cao, Z.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Asset allocation strategies, data snooping, and the 1/n rule}.
+\newblock \bibinfo{journal}{SSRN Electronic Journal} \DOIprefix\doi{10.2139/ssrn.2861731}.
+%Type = Inproceedings
+\bibitem[{Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang and Chen}]{hu2021lora}
+\bibinfo{author}{Hu, E.J.}, \bibinfo{author}{Shen, Y.}, \bibinfo{author}{Wallis, P.}, \bibinfo{author}{Allen-Zhu, Z.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Wang, S.}, \bibinfo{author}{Chen, W.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Lora: Low-rank adaptation of large language models}, in: \bibinfo{booktitle}{In: Proceedings of the 10th International Conference on Learning Representations (ICLR)}.
+%Type = Article
+\bibitem[{Jacobs et~al.(1991)Jacobs, Jordan, Nowlan and Hinton}]{jacobs1991adaptive}
+\bibinfo{author}{Jacobs, R.A.}, \bibinfo{author}{Jordan, M.I.}, \bibinfo{author}{Nowlan, S.J.}, \bibinfo{author}{Hinton, G.E.}, \bibinfo{year}{1991}.
+\newblock \bibinfo{title}{Adaptive mixtures of local experts}.
+\newblock \bibinfo{journal}{Neural Computation} \bibinfo{volume}{3}, \bibinfo{pages}{79--87}.
+\newblock \DOIprefix\doi{10.1162/neco.1991.3.1.79}.
+%Type = Inproceedings
+\bibitem[{Lepikhin et~al.(2021)Lepikhin, Lee, Xu, Chen, Firat, Huang, Krikun, Shazeer and Chen}]{lepikhin2021gshard}
+\bibinfo{author}{Lepikhin, D.}, \bibinfo{author}{Lee, H.}, \bibinfo{author}{Xu, Y.}, \bibinfo{author}{Chen, D.}, \bibinfo{author}{Firat, O.}, \bibinfo{author}{Huang, Y.}, \bibinfo{author}{Krikun, M.}, \bibinfo{author}{Shazeer, N.}, \bibinfo{author}{Chen, Z.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Gshard: Scaling giant models with conditional computation and automatic sharding}, in: \bibinfo{booktitle}{In: Proceedings of the 9th International Conference on Learning Representations (ICLR)}.
+%Type = Article
+\bibitem[{Lim et~al.(2021)Lim, Arik, Loeff and Pfister}]{lim2021temporal}
+\bibinfo{author}{Lim, B.}, \bibinfo{author}{Arik, S.O.}, \bibinfo{author}{Loeff, N.}, \bibinfo{author}{Pfister, T.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Temporal fusion transformers for interpretable multi-horizon time series forecasting}.
+\newblock \bibinfo{journal}{International Journal of Forecasting} \bibinfo{volume}{37}, \bibinfo{pages}{1748--1764}.
+\newblock \DOIprefix\doi{10.1016/j.ijforecast.2021.03.012}.
+%Type = Article
+\bibitem[{Lim et~al.(2019)Lim, Zohren and Roberts}]{lim2019uncertainty}
+\bibinfo{author}{Lim, B.}, \bibinfo{author}{Zohren, S.}, \bibinfo{author}{Roberts, S.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Uncertainty-aware trading with deep reinforcement learning}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1906.05556} .
+%Type = Inproceedings
+\bibitem[{Liu et~al.(2024)Liu, Hu, Zhang, Wu, Wang, Ma and Long}]{liu2024itransformer}
+\bibinfo{author}{Liu, Y.}, \bibinfo{author}{Hu, T.}, \bibinfo{author}{Zhang, H.}, \bibinfo{author}{Wu, H.}, \bibinfo{author}{Wang, S.}, \bibinfo{author}{Ma, L.}, \bibinfo{author}{Long, M.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{itransformer: Inverted transformers are effective for time series forecasting}, in: \bibinfo{booktitle}{In: Proceedings of the 12th International Conference on Learning Representations (ICLR)}.
+%Type = Inproceedings
+\bibitem[{Nie et~al.(2023)Nie, Nguyen, Sinthong and Kalagnanam}]{nie2023patchtst}
+\bibinfo{author}{Nie, Y.}, \bibinfo{author}{Nguyen, N.H.}, \bibinfo{author}{Sinthong, P.}, \bibinfo{author}{Kalagnanam, J.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{A time series is worth 64 words: Long-term forecasting with transformers}, in: \bibinfo{booktitle}{In: Proceedings of the 11th International Conference on Learning Representations (ICLR)}.
+%Type = Article
+\bibitem[{Paszke et~al.(2019)Paszke, Gross, Massa, Lerer, Bradbury, Chanan, Killeen, Lin, Gimelshein, Antiga et~al.}]{pytorch2019}
+\bibinfo{author}{Paszke, A.}, \bibinfo{author}{Gross, S.}, \bibinfo{author}{Massa, F.}, \bibinfo{author}{Lerer, A.}, \bibinfo{author}{Bradbury, J.}, \bibinfo{author}{Chanan, G.}, \bibinfo{author}{Killeen, T.}, \bibinfo{author}{Lin, Z.}, \bibinfo{author}{Gimelshein, N.}, \bibinfo{author}{Antiga, L.}, et~al., \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Pytorch: An imperative style, high-performance deep learning library}.
+\newblock \bibinfo{journal}{Advances in Neural Information Processing Systems} \bibinfo{volume}{32}.
+%Type = Article
+\bibitem[{Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg et~al.}]{scikit-learn}
+\bibinfo{author}{Pedregosa, F.}, \bibinfo{author}{Varoquaux, G.}, \bibinfo{author}{Gramfort, A.}, \bibinfo{author}{Michel, V.}, \bibinfo{author}{Thirion, B.}, \bibinfo{author}{Grisel, O.}, \bibinfo{author}{Blondel, M.}, \bibinfo{author}{Prettenhofer, P.}, \bibinfo{author}{Weiss, R.}, \bibinfo{author}{Dubourg, V.}, et~al., \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Scikit-learn: Machine learning in python}.
+\newblock \bibinfo{journal}{Journal of Machine Learning Research} \bibinfo{volume}{12}, \bibinfo{pages}{2825--2830}.
+%Type = Inproceedings
+\bibitem[{Shazeer et~al.(2017)Shazeer, Mirhoseini, Maziarz, Davis, Le, Hinton and Dean}]{shazeer2017outrageously}
+\bibinfo{author}{Shazeer, N.}, \bibinfo{author}{Mirhoseini, A.}, \bibinfo{author}{Maziarz, K.}, \bibinfo{author}{Davis, A.}, \bibinfo{author}{Le, Q.}, \bibinfo{author}{Hinton, G.}, \bibinfo{author}{Dean, J.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Outrageously large neural networks: The sparsely-gated mixture-of-experts layer}, in: \bibinfo{booktitle}{In: Proceedings of the 5th International Conference on Learning Representations (ICLR)}.
+%Type = Article
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser and Polosukhin}]{vaswani2017attention}
+\bibinfo{author}{Vaswani, A.}, \bibinfo{author}{Shazeer, N.}, \bibinfo{author}{Parmar, N.}, \bibinfo{author}{Uszkoreit, J.}, \bibinfo{author}{Jones, L.}, \bibinfo{author}{Gomez, A.N.}, \bibinfo{author}{Kaiser, {\L}.}, \bibinfo{author}{Polosukhin, I.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Attention is all you need}.
+\newblock \bibinfo{journal}{Advances in Neural Information Processing Systems} \bibinfo{volume}{30}.
+%Type = Inproceedings
+\bibitem[{Wu et~al.(2023)Wu, Hu, Liu, Zhou, Wang and Long}]{wu2023timesnet}
+\bibinfo{author}{Wu, H.}, \bibinfo{author}{Hu, T.}, \bibinfo{author}{Liu, Y.}, \bibinfo{author}{Zhou, H.}, \bibinfo{author}{Wang, J.}, \bibinfo{author}{Long, M.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Timesnet: Temporal 2d-variation modeling for general time series analysis}, in: \bibinfo{booktitle}{In: Proceedings of the 11th International Conference on Learning Representations (ICLR)}.
+%Type = Article
+\bibitem[{Wu et~al.(2021)Wu, Xu, Wang and Long}]{wu2021autoformer}
+\bibinfo{author}{Wu, H.}, \bibinfo{author}{Xu, J.}, \bibinfo{author}{Wang, J.}, \bibinfo{author}{Long, M.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Autoformer: Decomposition transformers with auto-correlation for long-term series forecasting}.
+\newblock \bibinfo{journal}{Advances in Neural Information Processing Systems} \bibinfo{volume}{34}, \bibinfo{pages}{22419--22430}.
+%Type = Article
+\bibitem[{Zhang et~al.(2021)Zhang, Xu and Wang}]{zhang2021uncertainty}
+\bibinfo{author}{Zhang, L.}, \bibinfo{author}{Xu, M.}, \bibinfo{author}{Wang, H.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Uncertainty quantification in stock price prediction with monte carlo dropout}.
+\newblock \bibinfo{journal}{Expert Systems with Applications} \bibinfo{volume}{177}, \bibinfo{pages}{114969}.
+%Type = Article
+\bibitem[{Zhang et~al.(2020)Zhang, Chen and Wang}]{zhang2020stock}
+\bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Chen, L.}, \bibinfo{author}{Wang, S.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Stock market prediction via market state-aware lstm}.
+\newblock \bibinfo{journal}{IEEE Access} \bibinfo{volume}{8}, \bibinfo{pages}{189650--189662}.
+%Type = Inproceedings
+\bibitem[{Zhou et~al.(2021)Zhou, Zhang, Peng, Zhang, Li, Xiong and Zhang}]{zhou2021informer}
+\bibinfo{author}{Zhou, H.}, \bibinfo{author}{Zhang, S.}, \bibinfo{author}{Peng, J.}, \bibinfo{author}{Zhang, S.}, \bibinfo{author}{Li, J.}, \bibinfo{author}{Xiong, H.}, \bibinfo{author}{Zhang, W.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Informer: Beyond efficient transformer for long sequence time-series forecasting}, in: \bibinfo{booktitle}{In: Proceedings of the 35th AAAI Conference on Artificial Intelligence (AAAI)}, pp. \bibinfo{pages}{11106--11115}.
+\newblock \DOIprefix\doi{10.1609/aaai.v35i12.17325}.
+
+\end{thebibliography}

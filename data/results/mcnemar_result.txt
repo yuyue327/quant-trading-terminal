@@ -1,0 +1,3 @@
+RF F1: 0.4673
+Ensemble F1: 0.4764
+McNemar p-value: 0.413607
