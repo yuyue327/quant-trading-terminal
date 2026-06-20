@@ -175,32 +175,24 @@ def load_ohlc(stock: str) -> List[Dict[str, Any]]:
 
 
 def get_stock_list() -> List[str]:
-    """获取所有可用股票列表（合并汇总 + 预测文件 + raw原始csv兜底）"""
-    stocks_set = set()
-
-    # 1. 从汇总文件读取（有回测结果的股票）
-    summary = load_summary()
-    if isinstance(summary, list):
-        for s in summary:
-            name = s.get('stock')
-            if name and "with_news" not in name:
-                stocks_set.add(name)
-
-    # 2. 从预测概率文件读取（补齐新增股票）
-    if os.path.exists(DATA_DIR):
-        for f in os.listdir(DATA_DIR):
-            if f.startswith("adaptive_probs_") and f.endswith(".csv"):
-                name = f.replace("adaptive_probs_", "").replace(".csv", "")
-                if name and "with_news" not in name:
-                    stocks_set.add(name)
-
-    # 3. 兜底：从raw原始csv提取标的（Render线上无results/features时也能返回列表）
-    if os.path.exists(RAW_DIR):
-        for f in os.listdir(RAW_DIR):
-            if f.endswith(".csv") and "with_news" not in f:
-                stock_name = f.replace(".csv", "")
-                stocks_set.add(stock_name)
-
-    stock_list = sorted(list(stocks_set))
-    print(f"【股票列表】共加载 {len(stock_list)} 只标的: {stock_list}")
-    return stock_list
+    """兜底写死股票列表，完全不依赖results文件，线上直接返回数据"""
+    return [
+        "A_sh.600030_中信证券",
+        "A_sh.600036_招商银行",
+        "A_sh.600519_贵州茅台",
+        "A_sh.600887_伊利股份",
+        "A_sh.601012_隆基绿能",
+        "A_sh.601688_华泰证券",
+        "A_sz.000001_平安银行",
+        "A_sz.000333_美的集团",
+        "A_sz.000568_泸州老窖",
+        "A_sz.000651_格力电器",
+        "A_sz.000858_五粮液",
+        "A_sz.002142_宁波银行",
+        "A_sz.002594_比亚迪",
+        "A_sz.300059_东方财富",
+        "A_sz.300750_宁德时代",
+        "US_AAPL_AAPL",
+        "US_MSFT_MSFT",
+        "US_NVDA_NVDA"
+    ]
