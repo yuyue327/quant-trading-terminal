@@ -1,4 +1,4 @@
 fastapi
-uvicorn
-numpy
+uvicorn[standard]
 pandas
+numpy
