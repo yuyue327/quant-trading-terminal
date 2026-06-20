@@ -19,6 +19,9 @@ import HeroStats from './components/HeroStats';
 import DonutChart from './components/DonutChart';
 import RiskReturnScatter from './components/RiskReturnScatter';
 
+// 读取后端API基础地址
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 interface Stock {
   stock: string;
   sharpe_median: number;
@@ -71,7 +74,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('/api/stocks')
+      .get(`${API_BASE}/api/stocks`)
       .then(res => {
         if (res.data?.stocks) {
           const stockList = res.data.stocks.map((name: string) => ({
@@ -85,7 +88,7 @@ function App() {
           if (stockList.length > 0) setSelected(stockList[0].stock);
 
           axios
-            .get('/api/summary')
+            .get(`${API_BASE}/api/summary`)
             .then(summaryRes => {
               if (summaryRes.data?.data) {
                 const summaryData = summaryRes.data.data;
@@ -111,7 +114,7 @@ function App() {
   useEffect(() => {
     if (!selected) return;
     axios
-      .get(`/api/ohlc/${selected}`)
+      .get(`${API_BASE}/api/ohlc/${selected}`)
       .then(res => {
         const data = res.data.data || [];
         setOhlc(data);
