@@ -19,8 +19,9 @@ import HeroStats from './components/HeroStats';
 import DonutChart from './components/DonutChart';
 import RiskReturnScatter from './components/RiskReturnScatter';
 
-// 读取后端API基础地址
+// 全局强制Axios后端域名，一劳永逸
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
+axios.defaults.baseURL = API_BASE;
 
 interface Stock {
   stock: string;
@@ -74,7 +75,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`${API_BASE}/api/stocks`)
+      .get('/api/stocks')
       .then(res => {
         if (res.data?.stocks) {
           const stockList = res.data.stocks.map((name: string) => ({
@@ -88,7 +89,7 @@ function App() {
           if (stockList.length > 0) setSelected(stockList[0].stock);
 
           axios
-            .get(`${API_BASE}/api/summary`)
+            .get('/api/summary')
             .then(summaryRes => {
               if (summaryRes.data?.data) {
                 const summaryData = summaryRes.data.data;
@@ -114,7 +115,7 @@ function App() {
   useEffect(() => {
     if (!selected) return;
     axios
-      .get(`${API_BASE}/api/ohlc/${selected}`)
+      .get(`/api/ohlc/${selected}`)
       .then(res => {
         const data = res.data.data || [];
         setOhlc(data);
