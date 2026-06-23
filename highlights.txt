@@ -1,5 +1,0 @@
-Knowledge Lifecycle Framework for quantitative trading with contrastive state discovery and hierarchical expert routing.
-Hierarchical architecture with shared encoder and lightweight adapters reduces parameters by 68.7% vs. independent experts.
-Bidirectional knowledge flow enables expert-specific knowledge to enrich the shared encoder, improving knowledge gain by 15.5%.
-System achieves positive Sharpe ratios on 16/18 stocks (88.9%) with cross-stock Sharpe std of 0.55 and permutation test p = 0.0006.
-Zero-shot generalization from A-shares to US equities with only 6.2% accuracy degradation.
