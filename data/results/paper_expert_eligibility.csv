@@ -1,0 +1,5 @@
+Expert,Training Samples,Validation Sharpe,Min Samples Required,Eligible
+Expert 1,380,2.89,100,True
+Expert 2,220,2.56,100,True
+Expert 3,180,1.67,100,True
+Expert 4,80,0.92,100,False

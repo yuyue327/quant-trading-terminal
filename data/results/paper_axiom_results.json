@@ -1,0 +1,13 @@
+{
+    "axiom_1": {
+        "monotonic": true,
+        "alpha_min": 0.22853919467780193
+    },
+    "axiom_2": {
+        "spearman_corr": 0.9999999999999999
+    },
+    "axiom_3": {
+        "violations": 0,
+        "total": 24
+    }
+}

@@ -1,0 +1,7 @@
+
+知识生命周期理论框架 (Knowledge Lifecycle Framework)
+1. 知识获取 (Acquisition): K_new = Encoder(X) + Adapter(state, X)
+2. 知识保存 (Preservation): K_saved = α * K_shared + (1-α) * K_specific
+3. 知识更新 (Update): K_updated = K_old + η * ∇L(K_new)
+4. 知识遗忘 (Forgetting): F(s_i, s_j) = 1 - Perf(K_{s_i} in s_j) / Perf(K_{s_i} in s_i)
+5. 知识蒸馏式专家演化: L_distill = KL(p_old, p_new) + λ * ||W_old - W_new||_F^2

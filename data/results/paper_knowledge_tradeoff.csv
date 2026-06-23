@@ -1,0 +1,6 @@
+Layer,Representation Change,Specialization Gain,Layer Type
+Layer 1,0.12,0.05,Shared
+Layer 2,0.18,0.08,Shared
+Layer 3,0.25,0.12,Shared
+Layer 4,0.45,0.28,Adapter
+Layer 5,0.62,0.42,Adapter

@@ -19,10 +19,6 @@ import HeroStats from './components/HeroStats';
 import DonutChart from './components/DonutChart';
 import RiskReturnScatter from './components/RiskReturnScatter';
 
-// 全局强制Axios后端域名，一劳永逸
-const API_BASE = import.meta.env.VITE_API_BASE_URL;
-axios.defaults.baseURL = API_BASE;
-
 interface Stock {
   stock: string;
   sharpe_median: number;

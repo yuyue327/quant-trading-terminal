@@ -1,0 +1,3 @@
+Architecture,Total Parameters,Reduction
+Independent Experts (K=4),391520,—
+Hierarchical (Ours),122720,68.7%

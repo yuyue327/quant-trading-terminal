@@ -1,5 +1,5 @@
-- An adaptive expert system for quantitative trading with state discovery (76 chars)
-- Contrastive learning discovers implicit market regimes without heuristic rules (79 chars)
-- Hierarchical PatchTST shares knowledge while enabling rapid expert specialization (78 chars)
-- System achieves positive Sharpe on 88.9% of stocks with zero per-stock tuning (75 chars)
-- Open-source interactive terminal bridges academic research and practical deployment (80 chars)
+Knowledge Lifecycle Framework for quantitative trading with contrastive state discovery and hierarchical expert routing.
+Hierarchical architecture with shared encoder and lightweight adapters reduces parameters by 68.7% vs. independent experts.
+Bidirectional knowledge flow enables expert-specific knowledge to enrich the shared encoder, improving knowledge gain by 15.5%.
+System achieves positive Sharpe ratios on 16/18 stocks (88.9%) with cross-stock Sharpe std of 0.55 and permutation test p = 0.0006.
+Zero-shot generalization from A-shares to US equities with only 6.2% accuracy degradation.

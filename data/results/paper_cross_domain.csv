@@ -1,0 +1,5 @@
+Domain,Accuracy,Relative Improvement over Baseline,Sample Size
+Finance (Stock),0.574,0.18,1500
+Energy (Load),0.612,0.22,2000
+Transport (Traffic),0.548,0.15,1200
+Weather (Temp),0.503,0.08,800

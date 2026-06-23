@@ -1,0 +1,4 @@
+Method,Detection Delay (days),Detection Accuracy
+HMM (baseline),5.2,0.62
+Rule-based (vol+trend),3.8,0.74
+Contrastive (Ours),1.2,0.91
