@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% 设置信件格式
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+% 发件人地址（使用英文拼音）
+\begin{flushright}
+Yuyue Zhang\\
+China University of Petroleum (East China)\\
+Email: \href{mailto:15044682275@163.com}{15044682275@163.com}\\
+June 23, 2026
+\end{flushright}
+
+% 收件人
+\begin{flushleft}
+The Editor\\
+\textit{Knowledge-Based Systems}
+\end{flushleft}
+
+\vspace{1em}
+
+Dear Editor,
+
+\vspace{1em}
+
+We are pleased to submit our original research article entitled \textit{“Knowledge Lifecycle Management for Quantitative Trading: A Knowledge-Based Expert System with Contrastive State Discovery and Hierarchical Routing”} for consideration for publication in \textit{Knowledge-Based Systems}.
+
+\vspace{1em}
+
+\textbf{Background and Problem}
+
+Quantitative trading systems face a critical but underexplored challenge: when market regimes shift, predictive knowledge is abruptly lost. Existing approaches either train a single model across all regimes—which fails to adapt—or maintain independent experts—which cannot share cross-state knowledge. This “knowledge forgetting” problem has been largely overlooked in the financial machine learning literature.
+
+\vspace{1em}
+
+\textbf{Our Contribution}
+
+To address this challenge, we propose a \textit{Knowledge Lifecycle Framework} with three integrated mechanisms:
+
+\begin{enumerate}[leftmargin=*,nosep]
+\item \textbf{Contrastive state discovery} that learns latent market state structures from data without manual heuristics, enabling adaptive state identification;
+\item \textbf{A hierarchical architecture} with a shared encoder and lightweight state adapters that preserves cross-state knowledge while enabling rapid specialization, using 68.7\% fewer parameters than independent experts;
+\item \textbf{State ambiguity awareness} and \textbf{bidirectional knowledge flow} that dynamically adjust expert routing based on identification confidence and enable expert-specific knowledge to enrich the shared encoder.
+\end{enumerate}
+
+\vspace{1em}
+
+\textbf{Key Findings}
+
+We validate our framework on 18 stocks over 5.5 years with strict rolling window backtesting and 5 repeated runs. Our system achieves:
+
+\begin{itemize}[leftmargin=*,nosep]
+\item Positive Sharpe ratios on 16/18 stocks (88.9\%), with permutation test $p = 0.0006$ confirming statistical significance;
+\item Cross-stock Sharpe standard deviation of 0.55, substantially lower than all baseline and state-of-the-art models;
+\item 42.3\% reduction in knowledge forgetting compared to independent experts;
+\item Successful zero-shot generalization from A-shares to US equities with only 6.2\% accuracy degradation.
+\end{itemize}
+
+At the equal-weight portfolio level, our system achieves Sharpe 2.87 and outperforms all baseline strategies.
+
+\vspace{1em}
+
+\textbf{Why This Work Fits \textit{Knowledge-Based Systems}}
+
+This work is designed from the ground up as a practical knowledge-based expert system. We explicitly formalize market states as \textit{knowledge states}—each encapsulating patterns, rules, and heuristics about price behavior under specific conditions. Our system represents knowledge at two levels (general knowledge via shared encoder, state-specific knowledge via adapters), and the expert routing mechanism is interpreted as a \textit{knowledge retrieval and inference process}. This aligns directly with the journal's core themes: knowledge representation, knowledge retrieval, and knowledge-based reasoning for decision support. Furthermore, we provide a fully open-source interactive deployment terminal that visualizes the entire decision pipeline, bridging the gap between algorithmic research and practical applications.
+
+\vspace{1em}
+
+\textbf{Originality and Significance}
+
+To the best of our knowledge, this is the first work to:
+\begin{itemize}[leftmargin=*,nosep]
+\item Formalize a Knowledge Lifecycle Framework (acquisition $\to$ preservation $\to$ update $\to$ forgetting) for financial time series prediction;
+\item Demonstrate bidirectional knowledge flow between shared and expert-specific components in a trading system;
+\item Quantify knowledge forgetting rates across market states and show they satisfy a metric structure (triangle inequality).
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Declarations}
+
+We confirm that:
+\begin{itemize}[leftmargin=*,nosep]
+\item This manuscript has not been published previously and is not under consideration elsewhere;
+\item All authors have read and approved the final manuscript;
+\item There are no competing financial or non-financial interests to declare;
+\item Generative AI tools (Grammarly and ChatGPT) were used only to improve language fluency and assist with literature organization; all content was reviewed and edited by the authors, who take full responsibility for the published article.
+\end{itemize}
+
+\vspace{1em}
+
+We believe this work will be of significant interest to the readership of \textit{Knowledge-Based Systems} and would be grateful for your consideration.
+
+\vspace{1em}
+
+Thank you for your time and consideration. We look forward to hearing from you.
+
+\vspace{2em}
+
+Yours sincerely,
+
+\vspace{2em}
+
+Yuyue Zhang\\
+Corresponding Author\\
+China University of Petroleum (East China)\\
+Email: \href{mailto:15044682275@163.com}{15044682275@163.com}
+
+\end{document}
