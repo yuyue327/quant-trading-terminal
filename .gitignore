@@ -1,19 +1,8 @@
-# 论文正文、稿件、临时文件（完全不上传）
-main*
-cover_letter*
-*.tex
-*.pdf
-*.aux
-*.log
-*.out
-*.synctex*
-highlights.txt
-references.bib
-cas-*.sty
-cas-*.bst
-
-# 本地缓存、无关依赖
+* 2.py
+* 2.sh
+* 2.jpeg
+thumbnails/
+data/
 __pycache__/
-node_modules/
-.DS_Store
-*.zip
+*.log
+*.csv
