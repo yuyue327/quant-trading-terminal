@@ -6,3 +6,18 @@ data/
 __pycache__/
 *.log
 *.csv
+# 投稿推荐信
+cover_letter*
+# LaTeX编译文件
+*.tex
+*.pdf
+*.aux
+*.out
+*.bbl
+*.abs
+*.spl
+*.synctex*
+# 压缩包
+*.zip
+# 系统文件
+.DS_Store
